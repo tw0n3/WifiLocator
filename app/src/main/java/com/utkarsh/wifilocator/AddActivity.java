@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class AddActivity extends AppCompatActivity {
 
 
-    EditText editrpid,editrssi1,editrssi2,editrssi3;
+    EditText editrpid,editrssi1,editrssi2,editrssi3,editX,editY;
     Button addData;
     DbHelper dbHelper;
 
@@ -27,6 +27,8 @@ public class AddActivity extends AppCompatActivity {
         editrssi1 = findViewById(R.id.getrssi1);
         editrssi2 = findViewById(R.id.getrssi2);
         editrssi3 = findViewById(R.id.getrssi3);
+        editX = findViewById(R.id.getX);
+        editY = findViewById(R.id.getY);
 
         addData = findViewById(R.id.addbtn);
 
@@ -38,7 +40,13 @@ public class AddActivity extends AppCompatActivity {
         addData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean isInserted = dbHelper.insertData(editrpid.getText().toString(),editrssi1.getText().toString(),editrssi2.getText().toString(),editrssi3.getText().toString());
+                boolean isInserted = dbHelper.insertData(editrpid.getText().toString(),
+                        editrssi1.getText().toString(),
+                        editrssi2.getText().toString(),
+                        editrssi3.getText().toString(),
+                        editX.getText().toString(),
+                        editY.getText().toString()
+                );
 
                 if (isInserted = true)
                     Toast.makeText(AddActivity.this,"Inserted",Toast.LENGTH_LONG).show();

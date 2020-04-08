@@ -54,14 +54,40 @@
         android:layout_marginTop="198dp"
         android:hint="RSSI 3" />
 
-    <Button
+    <EditText
+        android:id="@+id/getX"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="178dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="258dp"
+        android:hint="X Cordinate" />
+
+    <EditText
+        android:id="@+id/getY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="318dp"
+        android:hint="Y Cordinate" />
+
+    <Button
         android:id="@+id/addbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="62dp"
         android:text="Add"
-        />
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp" />
 
 </RelativeLayout>
