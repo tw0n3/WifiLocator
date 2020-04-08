@@ -25,7 +25,7 @@ public class ScanActivity extends AppCompatActivity {
     RecyclerAdapter recyclerAdapter;
 
     WifiManager wifiManager;
-    Button buttonScan;
+    Button buttonScan, buttonadd;
 
     List<ScanResult> results;
     ArrayList<String> arrayList = new ArrayList<>();
@@ -38,6 +38,7 @@ public class ScanActivity extends AppCompatActivity {
 
         results = new ArrayList<>();
 
+        //After Clicking Scan Button
         buttonScan = findViewById(R.id.scan);
         buttonScan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +63,16 @@ public class ScanActivity extends AppCompatActivity {
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
 
-       // scanWifi();
+        // After Clicking ADD button
+        buttonadd = findViewById(R.id.add);
+        buttonadd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ScanActivity.this, AddActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 
     private void scanWifi() {
@@ -78,11 +88,13 @@ public class ScanActivity extends AppCompatActivity {
             results = wifiManager.getScanResults();
             unregisterReceiver(this);
 
-            for(ScanResult scanResult :results){
+            for (ScanResult scanResult : results) {
                 arrayList.add(scanResult.SSID + " - [" + scanResult.level + "]");
                 recyclerAdapter.notifyDataSetChanged();
 
-        }}
+            }
+        }
     };
+
 }
 
