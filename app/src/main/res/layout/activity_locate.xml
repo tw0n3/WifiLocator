@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<ImageView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="450dp"-->
+            <!--android:id="@+id/mapview"-->
+            <!--android:background="@drawable/map"/>-->
+
+        <TextView
+            android:layout_width="210dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/mapview"
+            android:id="@+id/location"
+            android:text="Location"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:paddingTop="5dp"
+            />
+
+        <TextView
+            android:paddingTop="5dp"
+            android:layout_below="@+id/mapview"
+            android:id="@+id/rssi"
+            android:layout_width="210dp"
+            android:layout_height="30dp"
+            android:layout_toRightOf="@+id/location"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:text="Direction"/>
+
+        <TextView
+            android:id="@+id/loc"
+            android:layout_width="212dp"
+            android:layout_height="42dp"
+            android:layout_below="@+id/location"
+            android:paddingTop="15dp"
+            android:text="current location"
+            android:textAlignment="center"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btn_locate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Locate"
+            android:textAlignment="center"
+            android:layout_below="@id/loc" />
+
+        <Button
+            android:id="@+id/btn_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Display Table Contents"
+            android:layout_alignParentBottom="true"
+            android:textAlignment="center"
+            android:layout_above
+                ="@id/btn_locate" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/textView"
+            android:layout_height="match_parent"
+            android:layout_below="@id/direction"
+            android:layout_toRightOf="@id/btn_locate"
+            android:text="Live rssi readings"/>
+
+        <TextView
+            android:layout_below="@+id/rssi"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:paddingTop="15dp"
+            android:id="@+id/direction"
+            android:layout_toRightOf="@+id/loc"
+            android:text="current direction"/>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

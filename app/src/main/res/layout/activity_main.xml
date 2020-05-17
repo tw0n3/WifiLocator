@@ -6,7 +6,7 @@
     >
 
     <Button
-        android:id="@+id/Locate_mainpage"
+        android:id="@+id/locate_mainpage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
