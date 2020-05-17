@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
 import android.support.v7.app.AppCompatActivity;
@@ -11,9 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,11 +24,13 @@ public class ScanActivity extends AppCompatActivity {
     RecyclerAdapter recyclerAdapter;
 
     WifiManager wifiManager;
-    Button buttonScan, buttonadd;
+    Button buttonScan, buttonadd, btn_clr;
 
     List<ScanResult> results;
     ArrayList<String> arrayList = new ArrayList<>();
 
+    public static final String DB_Name = "WIFI_INFO.db";
+    public static final String TB_Name = "FINGERPRINT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +74,20 @@ public class ScanActivity extends AppCompatActivity {
             }
         });
 
+
+        btn_clr = findViewById(R.id.clear);
+        btn_clr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SQLiteDatabase db;
+                db = openOrCreateDatabase(MainActivity.DB_Name, MODE_PRIVATE, null);
+                db.execSQL("delete from "+ TB_Name);
+            }
+        });
+
     }
+
+
 
     private void scanWifi() {
         arrayList.clear();
