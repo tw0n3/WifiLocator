@@ -88,7 +88,6 @@ public class ScanActivity extends AppCompatActivity {
     }
 
 
-
     private void scanWifi() {
         arrayList.clear();
         registerReceiver(wifiReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));

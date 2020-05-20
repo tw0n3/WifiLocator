@@ -16,14 +16,16 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String DB_Name = "WIFI_INFO.db";
     public static final String TB_Name = "FINGERPRINT";
 
-    public static final String COL_1 = "RPID";
-    public static final String COL_2 = "RSSI_1";
-    public static final String COL_3 = "RSSI_2";
-    public static final String COL_4 = "RSSI_3";
-    public static final String COL_5 = "X_Cod";
-    public static final String COL_6 = "Y_Cod";
+    public static final String COL_1 = "id";
+    public static final String COL_2 = "rssi1";
+    public static final String COL_3 = "rssi2";
+    public static final String COL_4 = "rssi3";
+    public static final String COL_5 = "x";
+    public static final String COL_6 = "y";
 
     private static final int version = 1;
+    SQLiteDatabase db = this.getWritableDatabase();
+
 
     public DbHelper(Context context) {
         super(context, DB_Name, null, version);
@@ -31,7 +33,6 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db = this.getWritableDatabase();
         db.execSQL(
                 "CREATE TABLE IF NOT EXISTS FINGERPRINT (" +
                         "    id int," +
@@ -44,7 +45,6 @@ public class DbHelper extends SQLiteOpenHelper {
         );    }
 
     public boolean insertData(String RPID, String RSSI_1, String RSSI_2, String RSSI_3, String X, String Y) {
-        SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_1, RPID);

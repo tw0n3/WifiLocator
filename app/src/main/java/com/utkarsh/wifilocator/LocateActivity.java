@@ -256,7 +256,8 @@ public class LocateActivity extends AppCompatActivity {
         Cursor allRows  = db.rawQuery("SELECT * FROM " + TB_Name, null);
         if (allRows.moveToFirst() ){
             String[] columnNames = allRows.getColumnNames();
-            tableString += columnNames[0] + "\t" + columnNames[1] + "\t" + columnNames[2] + "\t"+ columnNames[3] + "\t"+ columnNames[4] + "\t"+ columnNames[5] + "\t\n";
+            tableString += columnNames[0] + "\t\t\t\t" + columnNames[1] + "\t\t\t\t" + columnNames[2]
+                    + "\t\t\t\t"+ columnNames[3] + "\t\t\t\t"+ columnNames[4] + "\t\t\t\t"+ columnNames[5] + "\t\n";
             do {
                 for (int i = 0; i < 6; i++) {
                     tableString += allRows.getInt(i) + "\t\t\t\t\t\t";
