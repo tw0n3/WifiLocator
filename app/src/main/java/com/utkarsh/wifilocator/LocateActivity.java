@@ -154,6 +154,7 @@ public class LocateActivity extends AppCompatActivity {
                               ((fingerprint[i][1] - currentRssi[1]) * (fingerprint[i][1] - currentRssi[1])) +
                               ((fingerprint[i][1] - currentRssi[2]) * (fingerprint[i][1] - currentRssi[2]));
             distance = Math.round(Math.sqrt(distance));
+            distance = Math.abs(distance);
             byteDistance = (byte) distance;
             kNNarray[i][0] = (byte) fingerprint[i][0];
             kNNarray[i][1] = byteDistance;
